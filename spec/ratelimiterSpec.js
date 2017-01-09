@@ -1,12 +1,12 @@
 var assert = require('assert'),
   RateLimiter = require('../index'),
-  Redis = require('ioredis');
+  redis = require('redis');
 
 var ID = 'testlimiter',
   LIMIT = 10,
   DURATION = 30000;
 
-var redisClient = new Redis();
+var redisClient = redis.createClient();
 
 describe('Setup', function () {
   var limiter;
